@@ -1,6 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 17:24:28 by omar             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+#include <stdbool.h>
+
 typedef	struct	s_data {
 	int size_array;
 	int	*stack_a;
@@ -33,3 +47,8 @@ void	sort_four(t_data *data);
 void	order_array(int *array, t_data *data);
 void	sort_hundred(t_data *data);
 void	sb(t_data *data);
+void	sort_five_hunder(t_data *data);
+int		get_bigest_index(t_data *data);
+void	ag_push_to_stack_b(t_data *data);
+void	check_is_all_push(t_data *data, int *count);
+int	is_sorted(t_data *data);

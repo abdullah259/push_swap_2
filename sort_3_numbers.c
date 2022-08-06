@@ -1,38 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_3_numbers.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/06 16:39:42 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 16:39:43 by omar             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	sort_three(t_data *data)
-{
-	if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1] < data->stack_a[2]
-		&& data->stack_a[0] < data->stack_a[2])
-	{
-		sa(data);
-	}
-	else if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1] > data->stack_a[2]
-			&& data->stack_a[0] > data->stack_a[2])
-	{
-		sa(data);
-		rra(data);
-	}
-	else if (data->stack_a[0] > data->stack_a[1] && data->stack_a[1] < data->stack_a[2]
-			&& data->stack_a[0] > data->stack_a[2])
-	{
-		ra(data);
-	}
-	else if (data->stack_a[0] < data->stack_a[1] && data->stack_a[1] > data->stack_a[2]
-			&&
-			data->stack_a[0] < data->stack_a[2])
-	{
-		sa(data);
-		ra(data);
-	}
-	else if (data->stack_a[0] < data->stack_a[1] && data->stack_a[1] > data->stack_a[2] 
-			&& data->stack_a[0] > data->stack_a[2])
-	{
-		rra(data);
-	}
-	else
-		printf("sorted");
-}
+#include "push_swap.h"
 
 void	sort_three4(t_data *data)
 {
@@ -41,9 +19,7 @@ void	sort_three4(t_data *data)
     int c = data->top_a + 2;
 	if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] < data->stack_a[c]
 		&& data->stack_a[a] < data->stack_a[c])
-	{
 		sa(data);
-	}
 	else if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] > data->stack_a[c]
 			&& data->stack_a[a] > data->stack_a[c])
 	{
@@ -52,9 +28,7 @@ void	sort_three4(t_data *data)
 	}
 	else if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] < data->stack_a[c]
 			&& data->stack_a[a] > data->stack_a[c])
-	{
 		ra(data);
-	}
 	else if (data->stack_a[a] < data->stack_a[b] && data->stack_a[b] > data->stack_a[c]
 			&&
 			data->stack_a[a] < data->stack_a[c])
@@ -64,7 +38,5 @@ void	sort_three4(t_data *data)
 	}
 	else if (data->stack_a[a] < data->stack_a[b] && data->stack_a[b] > data->stack_a[c] 
 			&& data->stack_a[a] > data->stack_a[c])
-	{
 		rra(data);
-	}
 }

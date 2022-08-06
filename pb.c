@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/06 16:38:52 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 16:39:00 by omar             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	pb(t_data *data)
@@ -8,9 +20,6 @@ void	pb(t_data *data)
 		data->top_a +=1;
 		data->top_b +=1;
 		data->size_stack_b++;
-        // data->size_array--;
 	}
-    // printf("Top  B %d\n", data->top_b);
-    // printf("Top  A %d\n", data->top_a);
 	write(1,"pb\n",3);
 }

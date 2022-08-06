@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_5_numbers.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/06 16:39:46 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 16:39:47 by omar             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_smallest(t_data *data)
@@ -54,9 +66,5 @@ void	sort_four(t_data *data)
 		sort_three4(data);
 		pa(data);
 	}
-	for (int i = data->top_a; i < data->size_array; i++)
-	{
-		printf(" %d",data->stack_a[i]);
-	}
-	printf("\n");
+	// printf("\n");
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 17:32:24 by omar             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	check_after_num(char c, char c1, char c2)
@@ -49,7 +61,7 @@ void	ft_init(t_data *data)
 	data->stack_b = 0;
 	data->order_array = 0;
 	data->top_a = 0;
-	data->top_b = 0;
+	data->top_b = -1;
 	data->size_stack_b = 0;
 }
 
@@ -58,12 +70,9 @@ int main(int arc, char **argv)
 	int i;
 	char *join;
 	char **sp;
-	// int m;
-	// int n;
 	t_data data;
 
 	ft_init (&data);
-	data.size_array = 0;
 	i = 1;
 	if (arc < 2)
 	{
@@ -83,28 +92,14 @@ int main(int arc, char **argv)
 		arr_int(sp,&data);
 		check_dub(data.stack_a,&data);
 		order_array(data.order_array, &data);
-		data.top_a = 0;
-		data.top_b = -1;
-		// printf("this is top_a %d    and thtis is top_b%d\n ",data.top_a,data.top_b);
-	
     	if (data.size_array == 3)
-		{
 			sort_three4(&data);
-		}
-		else if (data.size_array == 4 || data.size_array == 5)
-		{
+		else if ((data.size_array == 4 || data.size_array == 5) && is_sorted(&data))
 			sort_four(&data);
-		}
-		else if (data.size_array > 5)
-		{
+		else if (data.size_array > 5 && data.size_array <= 100 && is_sorted(&data))
 			sort_hundred(&data);
-		}
-
-		// printf("this is top_a %d    and thtis is top_b%d\n ",data.top_a,data.top_b);
-
-        
-		// printf("\n");
+		else if (data.size_array >= 100 && is_sorted(&data))
+			sort_hundred(&data);
 	}
-
 }
 

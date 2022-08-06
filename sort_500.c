@@ -1,45 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_100.c                                         :+:      :+:    :+:   */
+/*   sort_500.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/06 02:14:45 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:39:50 by omar             ###   ########.fr       */
+/*   Created: 2022/08/06 02:15:44 by omar              #+#    #+#             */
+/*   Updated: 2022/08/06 16:54:59 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_bigest_index(t_data *data)
-{
-	int	b;
-	int	bigest;
-	int	index;
+// void	check_is_all_push(t_data *data, int *count)
+// {
+// 	while (count)
+// 	{
+// 		pb(data);
+// 		count--;
+// 	}
+// }
 
-	b = 0;
-	bigest = data->stack_a[data->top_b];
-	index = 0;
-	while (b < data->top_b)
+void	ag_push_to_stack_b(t_data *data)
+{
+	int	range;
+	int	count;
+	int	j;
+	int	range2;
+	int	temp;
+
+	range = data->size_array / 11;
+	j = 0;
+	range2 = range;
+	count = data->size_array;
+	while (range <= data->size_array)
 	{
-		if (bigest < data->stack_a[b])
+		j = data->top_a;
+		while (j < data->size_array)
 		{
-			bigest = data->stack_a[b];
-			index = b;
+			if (data->stack_a[j] <= data->order_array[range])
+			{
+				temp = data->stack_a[j];
+				while (temp != data->stack_a[data->top_a])
+				{
+					if (j <= data->size_array / 2)
+						ra(data);
+					else
+						rra(data);
+				}
+				pb(data);
+				count--;
+			}
+			j++;
 		}
-		b++;
+		range += range2;
 	}
-	return (index);
+	while (count)
+	{
+		pb(data);
+		count--;
+	}
 }
 
-void	sort_hundred(t_data *data)
+void	sort_five_hunder(t_data *data)
 {
 	int		arr_order;
 	int		index;
 	bool	a;
 
-	ag_push_to_stack_b(data);
 	a = true;
 	arr_order = data->size_array - 1;
 	while (a)
