@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:47 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:38:48 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 20:57:38 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap(int *num1, int *num2)
 {
-	int temp;
+	int	temp;
 
 	temp = *num1;
 	*num1 = *num2;
@@ -23,8 +23,8 @@ void	ft_swap(int *num1, int *num2)
 
 void	order_array(int *array, t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->size_array)
@@ -33,7 +33,7 @@ void	order_array(int *array, t_data *data)
 		while (j <= data->size_array - 1)
 		{
 			if (array[i] > array[j])
-				ft_swap(&array[i],&array[j]);
+				ft_swap (&array[i], &array[j]);
 			j++;
 		}
 		i++;

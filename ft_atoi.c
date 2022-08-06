@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:21 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:38:22 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 20:44:47 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	is_digit(char c)
 	return (0);
 }
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int		i;
-	int		pon;
+	int				i;
+	int				pon;
 	unsigned int	num;
 
 	num = 0;

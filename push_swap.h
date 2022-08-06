@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 19:55:36 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 20:41:58 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,3 +53,4 @@ void	ag_push_to_stack_b_500(t_data *data);
 void	check_is_all_push(t_data *data, int *count);
 int		is_sorted(t_data *data);
 void	push_tp_stack_b_100(t_data *data);
+void	ag_exit(void);

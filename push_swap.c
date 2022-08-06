@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 20:03:04 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 22:25:11 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int main(int arc, char **argv)
 		arr_int(sp,&data);
 		check_dub(data.stack_a,&data);
 		order_array(data.order_array, &data);
-    	if (data.size_array == 3)
+    	if (data.size_array == 3 && is_sorted(&data))
 			sort_three4(&data);
 		else if ((data.size_array == 4 || data.size_array == 5) && is_sorted(&data))
 			sort_four(&data);
@@ -101,10 +101,5 @@ int main(int arc, char **argv)
 		else if (data.size_array > 100 && is_sorted(&data))
 			sort_five_hunder(&data);
 	}
-	// for (int i = 0; i < data.size_array; i++)
-	// {
-	// 	printf(" %d",data.stack_a[i]);
-	// }
-	// printf("\n");
 }
 

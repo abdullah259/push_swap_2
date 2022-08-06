@@ -6,15 +6,15 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:12 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:38:13 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 20:39:35 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*arr_int(char **sp,t_data *data)
+void	*arr_int(char **sp, t_data *data)
 {
-	int m;
+	int	m;
 
 	m = 0;
 	while (sp[data->size_array])
