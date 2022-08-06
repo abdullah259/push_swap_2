@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:15:44 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:54:59 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/06 20:01:19 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // 	}
 // }
 
-void	ag_push_to_stack_b(t_data *data)
+void	ag_push_to_stack_b_500(t_data *data)
 {
 	int	range;
 	int	count;
@@ -68,6 +68,7 @@ void	sort_five_hunder(t_data *data)
 	int		index;
 	bool	a;
 
+	ag_push_to_stack_b_500(data);
 	a = true;
 	arr_order = data->size_array - 1;
 	while (a)

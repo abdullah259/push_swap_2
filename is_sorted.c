@@ -13,7 +13,7 @@ int	is_sorted(t_data *data)
 			j++;
 		i++;
 	}
-	if (i == data->size_array)
+	if (j == data->size_array)
 		return (0);
 	return (1);
 }
