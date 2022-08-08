@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:32 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 20:49:51 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 01:24:06 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static	int	word_count(char *s, char c)
 	return (j);
 }
 
-static int	length_str(char *s, char c, int start)
+static	int	length_str(char *s, char c, int start)
 {
 	int	i;
 
@@ -53,24 +53,18 @@ static int	length_str(char *s, char c, int start)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+char	**fill_str(char *s, char c, int i, char **ptr)
 {
-	char		**ptr;
-	int			i;
-	int			j;
-	int			k;
+	int	j;
+	int	k;
 
-	k = 0;
 	j = 0;
-	i = 0;
-	ptr = malloc((word_count((char *)s, c) + 1) * sizeof(char *));
-	if (!ptr)
-		return (NULL);
-	while (s[i] == c)
-		i++;
+	k = 0;
 	while (s[i])
 	{
 		ptr[j] = malloc((length_str((char *)s, c, i) + 1) * sizeof(char));
+		if (!ptr)
+			return (NULL);
 		k = 0;
 		while (s[i] != c && s[i])
 		{
@@ -84,5 +78,20 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	ptr[j] = NULL;
+	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ptr;
+	int		i;
+
+	i = 0;
+	ptr = malloc((word_count((char *)s, c) + 1) * sizeof(char *));
+	if (!ptr)
+		return (NULL);
+	while (s[i] == c)
+		i++;
+	ptr = fill_str((char *) s, c, i, ptr);
 	return (ptr);
 }

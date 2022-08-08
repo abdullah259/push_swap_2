@@ -6,20 +6,11 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:15:44 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 20:01:19 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 01:29:43 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	check_is_all_push(t_data *data, int *count)
-// {
-// 	while (count)
-// 	{
-// 		pb(data);
-// 		count--;
-// 	}
-// }
 
 void	ag_push_to_stack_b_500(t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:14:45 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 19:58:25 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 01:24:29 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,31 @@ int	get_bigest_index(t_data *data)
 	return (index);
 }
 
+void	ag_find_number_in_the_range(t_data *data, int *count, int *j, int *range)
+{
+	int temp;
+
+	if (data->stack_a[*j] <= data->order_array[*range])
+	{
+		temp = data->stack_a[*j];
+		while (temp != data->stack_a[data->top_a])
+		{
+			if (*j <= data->size_array / 2)
+				ra(data);
+			else
+				rra(data);
+		}
+		pb(data);
+		(*count)--;
+	}
+}
+
 void	push_to_stack_b_100(t_data *data)
 {
-		int	range;
+	int	range;
 	int	count;
 	int	j;
 	int	range2;
-	int	temp;
 
 	range = data->size_array / 6;
 	j = 0;
@@ -50,19 +68,7 @@ void	push_to_stack_b_100(t_data *data)
 		j = data->top_a;
 		while (j < data->size_array)
 		{
-			if (data->stack_a[j] <= data->order_array[range])
-			{
-				temp = data->stack_a[j];
-				while (temp != data->stack_a[data->top_a])
-				{
-					if (j <= data->size_array / 2)
-						ra(data);
-					else
-						rra(data);
-				}
-				pb(data);
-				count--;
-			}
+			ag_find_number_in_the_range(data,&count,&j,&range);
 			j++;
 		}
 		range += range2;
