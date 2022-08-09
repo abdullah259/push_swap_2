@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:39 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:39:40 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 16:11:34 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sb(t_data *data)
 {
-	int temp;
+	int	temp;
 
 	temp = data->stack_a[data->top_b];
 	data->stack_a[data->top_b] = data->stack_a[data->top_b - 1];

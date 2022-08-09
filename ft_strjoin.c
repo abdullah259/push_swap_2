@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:40 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:38:41 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 12:16:21 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,19 @@ int	ft_strlen(char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+void	fill_ret(char *s2, char *ret, int *i)
+{
+	int	j;
+
+	j = 0;
+	while (s2[j] != 0)
+	{
+		ret[*i] = s2[j];
+		(*i)++;
+		j++;
+	}
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -45,8 +58,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	ret[i] = ' ';
 	i++;
-	while (s2[j] != 0)
-		ret[i++] = s2[j++];
+	fill_ret (s2, ret, &i);
 	ret[i] = '\0';
 	free(s1);
 	return (ret);
@@ -54,14 +66,14 @@ char	*ft_strjoin(char *s1, char *s2)
 
 char	*ft_join_arg(char **argv)
 {
-	int	i;
-	char *temp;
+	int		i;
+	char	*temp;
 
 	i = 1;
 	temp = ft_strdup("");
 	while (argv[i])
 	{
-		temp = ft_strjoin(temp,argv[i]);
+		temp = ft_strjoin (temp, argv[i]);
 		i++;
 	}
 	return (temp);

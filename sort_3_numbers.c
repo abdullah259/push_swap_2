@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:42 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 16:39:43 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 16:23:51 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,33 @@
 
 void	sort_three4(t_data *data)
 {
-    int a = data->top_a;
-    int b = data->top_a + 1;
-    int c = data->top_a + 2;
-	if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] < data->stack_a[c]
-		&& data->stack_a[a] < data->stack_a[c])
+	int	a;
+
+	a = data->top_a;
+	if (data->stack_a[a] > data->stack_a[a + 1]
+		&& data->stack_a[a + 1] < data->stack_a[a + 2]
+		&& data->stack_a[a] < data->stack_a[a + 2])
 		sa(data);
-	else if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] > data->stack_a[c]
-			&& data->stack_a[a] > data->stack_a[c])
+	else if (data->stack_a[a] > data->stack_a[a + 1]
+		&& data->stack_a[a + 1] > data->stack_a[a + 2]
+		&& data->stack_a[a] > data->stack_a[a + 2])
 	{
 		sa(data);
 		rra(data);
 	}
-	else if (data->stack_a[a] > data->stack_a[b] && data->stack_a[b] < data->stack_a[c]
-			&& data->stack_a[a] > data->stack_a[c])
+	else if (data->stack_a[a] > data->stack_a[a + 1]
+		&& data->stack_a[a + 1] < data->stack_a[a + 2]
+		&& data->stack_a[a] > data->stack_a[a + 2])
 		ra(data);
-	else if (data->stack_a[a] < data->stack_a[b] && data->stack_a[b] > data->stack_a[c]
-			&&
-			data->stack_a[a] < data->stack_a[c])
+	else if (data->stack_a[a] < data->stack_a[a + 1]
+		&& data->stack_a[a + 1] > data->stack_a[a + 2]
+		&& data->stack_a[a] < data->stack_a[a + 2])
 	{
 		sa(data);
 		ra(data);
 	}
-	else if (data->stack_a[a] < data->stack_a[b] && data->stack_a[b] > data->stack_a[c] 
-			&& data->stack_a[a] > data->stack_a[c])
+	else if (data->stack_a[a] < data->stack_a[a + 1]
+		&& data->stack_a[a + 1] > data->stack_a[a + 2]
+		&& data->stack_a[a] > data->stack_a[a + 2])
 		rra(data);
 }

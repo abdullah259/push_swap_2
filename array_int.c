@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:12 by omar              #+#    #+#             */
-/*   Updated: 2022/08/07 21:42:23 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 11:13:01 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ void	*arr_int(char **sp, t_data *data)
 		data->size_array++;
 	data->stack_a = malloc(data->size_array * sizeof(int));
 	if (!data->stack_a)
-		return (NULL);
-	data->stack_b = malloc(data->size_array * sizeof(int));
-	if (!data->stack_b)
 		return (NULL);
 	data->order_array = malloc(data->size_array * sizeof(int));
 	if (!data->order_array)

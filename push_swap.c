@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
-/*   Updated: 2022/08/09 01:27:58 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 16:05:56 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,7 @@ int main(int arc, char **argv)
 	if (arc > 1)
 	{
 		if (argv[i][0] == '\0')
-		{
-			ft_putendl_fd("empty string", 2);
-			exit(1);
-		}
+			ag_exit();
 		check_valid(argv);
 		join = ft_join_arg(argv);
 		sp = ft_split(join,' ');

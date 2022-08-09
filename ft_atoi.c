@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:21 by omar              #+#    #+#             */
-/*   Updated: 2022/08/09 01:26:17 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/09 11:14:57 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int	ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 		pon *= 1 - 2 * (str[i++] == '-');
 	if (!is_digit(str[i]))
-	{
-		write(1,"error here \n",12);
-		exit(1);
-	}
+		ag_exit();
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = num * 10 + (str[i] - 48);
