@@ -50,62 +50,147 @@
 // 	}
 // 	return(i);
 // }
-int	check_doubles(char *s, int i, char c)
-{
-	int j;
+// int	check_doubles(char *s, int i, char c)
+// {
+// 	int j;
 
-	j = 0;
-	while (j < i)
-	{
-		if (s[j] == c)
-			return (0);
-		j++;
-	}
-	return (1);
-}
-int check_dob(char *str,char c)
-{
-	int i;
+// 	j = 0;
+// 	while (j < i)
+// 	{
+// 		if (s[j] == c)
+// 			return (0);
+// 		j++;
+// 	}
+// 	return (1);
+// }
+// int check_dob(char *str,char c)
+// {
+// 	int i;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (0);
-		i++;	
-	}
-	return (1);
-}
-int main(int arc, char **sp)
-{
-	int i;
-	int j;
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		if (str[i] == c)
+// 			return (0);
+// 		i++;	
+// 	}
+// 	return (1);
+// }
+// int main(int arc, char **sp)
+// {
+// 	int i;
+// 	int j;
 
-	j = 0;
-	i = 0;
-	if (arc == 3)
-	{
-		while (sp[1][i])
-		{
-			if (check_doubles(sp[1],i,sp[1][i]))
-			{
-				write(1,&sp[1][i],1);
-			}
-			i++;
-		}
-		// write(1,"\n",1);
-		// printf("this is %d\n",i);
-		i = 0;		
-		while (sp[2][i])
-		{
-			if (check_dob(sp[1],sp[2][i]) == 1 && check_doubles(sp[2],i,sp[2][i]) == 1)
-			{
-				write(1,&sp[2][i],1);
-			}
-			i++;
-		}
+// 	j = 0;
+// 	i = 0;
+// 	if (arc == 3)
+// 	{
+// 		while (sp[1][i])
+// 		{
+// 			if (check_doubles(sp[1],i,sp[1][i]))
+// 			{
+// 				write(1,&sp[1][i],1);
+// 			}
+// 			i++;
+// 		}
+// 		// write(1,"\n",1);
+// 		// printf("this is %d\n",i);
+// 		i = 0;		
+// 		while (sp[2][i])
+// 		{
+// 			if (check_dob(sp[1],sp[2][i]) == 1 && check_doubles(sp[2],i,sp[2][i]) == 1)
+// 			{
+// 				write(1,&sp[2][i],1);
+// 			}
+// 			i++;
+// 		}
 		
-	}
-	write(1,"\n",1);
+// 	}
+// 	write(1,"\n",1);
 	
+// }
+
+int	ft_wordlen(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0' && str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+		++i;
+	return (i);
+}
+
+char	*word_dupe(char *str)
+{
+	int i = 0;
+	int len = ft_wordlen(str);
+	char *word = malloc(sizeof(char) * (len + 1));
+	
+	word[len] = '\0';
+	while (i < len)
+	{
+		word[i] = str[i];
+		++i;
+	}
+	return (word);
+}
+
+void	fill_words(char **array, char *str)
+{
+	int word_index = 0;
+	
+	while (*str == ' ' || *str == '\t' || *str == '\n')
+		++str;
+	while (*str != '\0')
+	{
+		array[word_index] = word_dupe(str);
+		++word_index;
+		while (*str != '\0' && *str != ' ' && *str != '\t' && *str != '\n')
+			++str;
+		while (*str == ' ' || *str == '\t' || *str == '\n')
+			++str;
+	}
+}
+
+int		count_words(char *str)
+{
+	int num_words = 0;
+	
+	while (*str == ' ' || *str == '\t' || *str == '\n')
+		++str;
+	while (*str != '\0')
+	{
+		++num_words;
+		while (*str != '\0' && *str != ' ' && *str != '\t' && *str != '\n')
+			++str;
+		while (*str == ' ' || *str == '\t' || *str == '\n')
+			++str;
+	}
+	return (num_words);
+}
+
+char	**ft_split(char *str)
+{
+	int		num_words;
+	char	**array;
+	
+	num_words = count_words(str);
+	array = malloc(sizeof(char *) * (num_words + 1));
+	
+	array[num_words] = 0;
+	fill_words(array, str);
+	return (array);
+}
+
+int main(int arc, char **argv)
+{
+	char *s = "       Abdullah      Ghazi          Saeeeed            ";
+	int i = 0;
+	int j = 0;
+
+	char **sp = ft_split(s);
+	while (sp[i])
+	{
+		printf("%s \n",sp[i]);
+		i++;
+	}
 }
