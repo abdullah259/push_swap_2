@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:15:44 by omar              #+#    #+#             */
-/*   Updated: 2022/08/09 01:29:43 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/11 13:49:26 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,15 @@ void	ag_push_to_stack_b_500(t_data *data)
 	int	count;
 	int	j;
 	int	range2;
-	int	temp;
+	// int	temp;
 
 	range = data->size_array / 11;
-	j = 0;
 	range2 = range;
 	count = data->size_array;
 	while (range <= data->size_array)
 	{
 		j = data->top_a;
-		while (j < data->size_array)
-		{
-			if (data->stack_a[j] <= data->order_array[range])
-			{
-				temp = data->stack_a[j];
-				while (temp != data->stack_a[data->top_a])
-				{
-					if (j <= data->size_array / 2)
-						ra(data);
-					else
-						rra(data);
-				}
-				pb(data);
-				count--;
-			}
-			j++;
-		}
+		ag_find_number_in_the_range(data,&count,&j,&range);
 		range += range2;
 	}
 	while (count)
@@ -67,7 +50,7 @@ void	sort_five_hunder(t_data *data)
 		index = get_bigest_index(data);
 		while (data->stack_a[data->top_b] != data->order_array[arr_order])
 		{
-			if (index >= data->size_array / 2)
+			if (index >= data->top_b / 2)
 				rb(data);
 			else
 				rrb(data);

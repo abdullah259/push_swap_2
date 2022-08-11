@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 20:41:58 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/11 13:45:55 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,4 @@ void	check_is_all_push(t_data *data, int *count);
 int		is_sorted(t_data *data);
 void	push_tp_stack_b_100(t_data *data);
 void	ag_exit(void);
+void	ag_find_number_in_the_range(t_data *data, int *count, int *j, int *range);
