@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:46 by omar              #+#    #+#             */
-/*   Updated: 2022/08/06 19:07:24 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 19:58:07 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	get_smallest(t_data *data)
 {
-	int i;
-	int lowstind;
-	int lowest;
+	int	i;
+	int	lowstind;
+	int	lowest;
 
 	i = data->top_a;
 	lowstind = i;
@@ -33,10 +33,25 @@ int	get_smallest(t_data *data)
 	return (lowstind);
 }
 
+void	sort_five(t_data *data, int *index)
+{
+	while (data->stack_a[data->top_a] != data->order_array[1])
+	{
+		if (*index <= data->size_array / 2)
+			ra(data);
+		else
+			rra(data);
+	}
+	pb(data);
+	sort_three4(data);
+	pa(data);
+	pa(data);
+}
+
 void	sort_four(t_data *data)
 {
-	int index;
-	
+	int	index;
+
 	index = get_smallest(data);
 	while (data->stack_a[data->top_a] != data->order_array[0])
 	{
@@ -49,17 +64,7 @@ void	sort_four(t_data *data)
 	if (data->size_array == 5)
 	{
 		index = get_smallest(data);
-		while (data->stack_a[data->top_a] != data->order_array[1])
-		{
-			if (index <= data->size_array / 2)
-				ra(data);
-			else
-				rra(data);
-		}
-		pb(data);
-		sort_three4(data);
-		pa(data);
-		pa(data);
+		sort_five(data, &index);
 	}
 	else
 	{

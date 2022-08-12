@@ -6,32 +6,11 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:14:45 by omar              #+#    #+#             */
-/*   Updated: 2022/08/11 12:59:11 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 22:44:01 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_bigest_index(t_data *data)
-{
-	int	b;
-	int	bigest;
-	int	index;
-
-	b = 0;
-	bigest = data->stack_a[data->top_b];
-	index = 0;
-	while (b < data->top_b)
-	{
-		if (bigest < data->stack_a[b])
-		{
-			bigest = data->stack_a[b];
-			index = b;
-		}
-		b++;
-	}
-	return (index);
-}
 
 void	ag_find_number_in_the_range(t_data *data, int *count, int *j, int *range)
 {
@@ -87,7 +66,6 @@ void	push_to_stack_b_100(t_data *data)
 	int	range2;
 
 	range = data->size_array / 6;
-	j = 0;
 	range2 = range;
 	count = data->size_array;
 	while (range <= data->size_array)

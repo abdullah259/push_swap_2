@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 02:15:44 by omar              #+#    #+#             */
-/*   Updated: 2022/08/11 13:49:26 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 20:34:20 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ag_push_to_stack_b_500(t_data *data)
 	int	count;
 	int	j;
 	int	range2;
-	// int	temp;
 
 	range = data->size_array / 11;
 	range2 = range;
@@ -26,7 +25,7 @@ void	ag_push_to_stack_b_500(t_data *data)
 	while (range <= data->size_array)
 	{
 		j = data->top_a;
-		ag_find_number_in_the_range(data,&count,&j,&range);
+		ag_find_number_in_the_range(data, &count, &j, &range);
 		range += range2;
 	}
 	while (count)

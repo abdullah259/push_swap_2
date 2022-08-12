@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:12 by omar              #+#    #+#             */
-/*   Updated: 2022/08/09 11:13:01 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 18:26:14 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ void	*arr_int(char **sp, t_data *data)
 	{
 		data->stack_a[m] = ft_atoi(sp[m]);
 		data->order_array[m] = ft_atoi(sp[m]);
+		m++;
+	}
+	m = 0;
+	while (sp[m])
+	{
+		free(sp[m]);
 		m++;
 	}
 	return (NULL);
