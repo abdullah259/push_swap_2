@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
-/*   Updated: 2022/08/12 23:47:15 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:17:55 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	check_number(t_data *data)
 
 int	main(int arc, char **argv)
 {
-	char	*join;
-	char	**sp;
 	t_data	data;
 
 	ft_init (&data);
@@ -51,14 +49,12 @@ int	main(int arc, char **argv)
 		if (argv[1][0] == '\0')
 			ag_exit();
 		check_valid(argv);
-		join = ft_join_arg(argv);
-		sp = ft_split(join, ' ');
-		ag_free(join);
-		arr_int(sp, &data);
+		data.join = ft_join_arg(argv);
+		data.sp = ft_split(data.join, ' ');
+		arr_int(data.sp, &data);
 		check_dub(data.stack_a, &data);
 		order_array(data.order_array, &data);
 		check_number(&data);
-		free(data.order_array);
-		free(data.stack_a);
+		ag_free(&data);
 	}
 }

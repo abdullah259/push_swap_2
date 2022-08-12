@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:21 by omar              #+#    #+#             */
-/*   Updated: 2022/08/09 11:14:57 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:15:29 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	ft_atoi(char *str)
 	{
 		num = num * 10 + (str[i] - 48);
 		if (num > 2147483648 && pon == -1)
-			exit(0);
+			exit(EXIT_FAILURE);
 		else if (num > 2147483647 && pon == 1)
-			exit(0);
+			exit(EXIT_FAILURE);
 		i++;
 	}
 	return ((int)(pon * num));

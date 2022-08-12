@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:12 by omar              #+#    #+#             */
-/*   Updated: 2022/08/12 23:45:15 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:09:32 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,5 @@ void	*arr_int(char **sp, t_data *data)
 		data->order_array[m] = ft_atoi(sp[m]);
 		m++;
 	}
-	m = 0;
-	while (sp[m])
-	{
-		free(sp[m]);
-		m++;
-	}
-	free(sp);
 	return (NULL);
 }

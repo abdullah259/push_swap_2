@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
-/*   Updated: 2022/08/12 23:47:07 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:16:10 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 # include <stdbool.h>
 
 typedef struct s_data {
-	int	size_array;
-	int	*stack_a;
-	int	*order_array;
-	int	top_a;
-	int	top_b;
+	int		size_array;
+	int		*stack_a;
+	int		*order_array;
+	int		top_a;
+	int		top_b;
+	char	*join;
+	char	**sp;
 }	t_data;
 
 char	**ft_split(char const *s, char c);
@@ -57,5 +59,5 @@ void	ag_exit(void);
 void	ag_find_number_in_the_range(t_data *data, int *count,
 			int *j, int *range);
 void	check_valid(char **argv);
-void	ag_free(char *s);
+void	ag_free(t_data *data);
 #endif
