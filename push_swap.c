@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
-/*   Updated: 2022/08/12 18:38:56 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 23:47:15 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ void	ft_init(t_data *data)
 {
 	data->size_array = 0;
 	data->stack_a = 0;
-	data->stack_b = 0;
 	data->order_array = 0;
 	data->top_a = 0;
 	data->top_b = -1;
-	data->size_stack_b = 0;
 }
 
 void	check_number(t_data *data)
@@ -61,5 +59,6 @@ int	main(int arc, char **argv)
 		order_array(data.order_array, &data);
 		check_number(&data);
 		free(data.order_array);
+		free(data.stack_a);
 	}
 }

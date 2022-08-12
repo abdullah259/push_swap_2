@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
-/*   Updated: 2022/08/12 19:36:59 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/12 23:47:07 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@
 typedef struct s_data {
 	int	size_array;
 	int	*stack_a;
-	int	*stack_b;
 	int	*order_array;
 	int	top_a;
 	int	top_b;
-	int	size_stack_b;
 }	t_data;
 
 char	**ft_split(char const *s, char c);
