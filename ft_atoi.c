@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:21 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:15:29 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 13:40:07 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ int	is_digit(char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+void	free_exit(t_data *data)
+{
+	ag_free(data);
+	ag_exit();
+}
+
+int	ft_atoi(char *str, t_data *data)
 {
 	int				i;
 	int				pon;
@@ -31,14 +37,14 @@ int	ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 		pon *= 1 - 2 * (str[i++] == '-');
 	if (!is_digit(str[i]))
-		ag_exit();
+		free_exit(data);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = num * 10 + (str[i] - 48);
 		if (num > 2147483648 && pon == -1)
-			exit(EXIT_FAILURE);
+			free_exit(data);
 		else if (num > 2147483647 && pon == 1)
-			exit(EXIT_FAILURE);
+			free_exit(data);
 		i++;
 	}
 	return ((int)(pon * num));

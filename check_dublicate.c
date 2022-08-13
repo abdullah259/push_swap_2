@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:17 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:10:19 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 12:06:48 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ void	check_dub(int *num, t_data *data)
 		while (j <= data->size_array - 1)
 		{
 			if (num[i] == num[j])
+			{
 				ag_free(data);
+				ag_exit();
+			}
 			j++;
 		}
 		i++;

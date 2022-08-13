@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:06 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:17:55 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 13:35:35 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int arc, char **argv)
 
 	ft_init (&data);
 	if (arc < 2)
-		ag_exit();
+		exit(0);
 	if (arc > 1)
 	{
 		if (argv[1][0] == '\0')
@@ -57,4 +57,5 @@ int	main(int arc, char **argv)
 		check_number(&data);
 		ag_free(&data);
 	}
+	return (0);
 }

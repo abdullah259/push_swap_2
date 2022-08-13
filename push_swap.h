@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:39:10 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:16:10 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:50:40 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putendl_fd(char const *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	check_dub(int *num, t_data *data);
 char	*ft_join_arg(char **argv);
-int		ft_atoi(char *str);
+int		ft_atoi(char *str, t_data *data);
 char	*ft_strdup(const char *s1);
 void	*arr_int(char **sp, t_data *data);
 void	sa(t_data *data);

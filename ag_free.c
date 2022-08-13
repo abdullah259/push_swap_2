@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 18:25:25 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:18:23 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 13:36:10 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ag_free(t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (data->join != NULL)
@@ -32,5 +32,4 @@ void	ag_free(t_data *data)
 	}
 	if (data->stack_a != NULL)
 		free(data->stack_a);
-	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:40 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 00:15:56 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 00:41:02 by omar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*ret;
 	int		i;
-	int		j;
 
 	if (!s1 && !s2)
 		return (0);
 	i = 0;
-	j = 0;
 	ret = malloc ((ft_strlen(s1) + ft_strlen(s2) + 2) * sizeof(char));
 	if (!ret)
 		return (NULL);
