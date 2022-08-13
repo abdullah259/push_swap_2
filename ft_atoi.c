@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omar <omar@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: aghazi <aghazi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 16:38:21 by omar              #+#    #+#             */
-/*   Updated: 2022/08/13 13:40:07 by omar             ###   ########.fr       */
+/*   Updated: 2022/08/13 18:54:20 by aghazi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(char *str, t_data *data)
 {
 	int				i;
 	int				pon;
-	unsigned int	num;
+	unsigned long	num;
 
 	num = 0;
 	i = 0;
